@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import { Header, List } from 'semantic-ui-react';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -14,16 +15,15 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-       <ul>
+    <div>
+      <Header as='h2' icon='money' content='Expense-Tracker'/>
+       <List>
          {expenses.map((expense: any) => (
-           <li key={expense.id}>
+           <List.Item key={expense.id}>
              {expense.name}
-           </li>
+           </List.Item>
          ))}
-       </ul>
-      </header>
+       </List>
     </div>
   );
 }
