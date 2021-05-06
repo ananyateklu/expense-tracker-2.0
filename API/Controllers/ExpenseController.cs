@@ -20,9 +20,14 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Expense>> GetExpense(Guid id)
         {
-            return await Mediator.Send(new details.Query{Id = id});
+            return await Mediator.Send(new Details.Query{Id = id});
         }
 
+        [HttpPost]
+        public async Task<ActionResult> CreateExpense(Expense expense)
+        {
+            return Ok(await Mediator.Send(new Create.Command {Expense = expense}));
+        }
 
     }
 }
