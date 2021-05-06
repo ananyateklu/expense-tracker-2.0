@@ -8,7 +8,6 @@ function App() {
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/expenses').then(response => {
-      console.log(response)
       setExpenses(response.data);
     })
   }, [])
