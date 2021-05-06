@@ -7,7 +7,7 @@ using Persistance;
 
 namespace Application.Expenses
 {
-    public class details
+    public class Details
     {
         public class Query : IRequest<Expense>
         {
