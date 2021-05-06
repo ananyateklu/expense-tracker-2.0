@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Application.Expenses;
 using Domain;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistance;
@@ -10,23 +12,25 @@ namespace API.Controllers
 {
     public class ExpensesController : BaseApiController
     {
-        private readonly DataContext _context;
-        public ExpensesController(DataContext context)
+        private readonly IMediator _mediator;
+
+        public ExpensesController(IMediator mediator)
         {
-            _context = context;
+            _mediator = mediator;
+
 
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Expense>>> GetExpenses()
         {
-            return await _context.Expenses.ToListAsync();
+            return await _mediator.Send(new List.Query());
         }
 
-        [HttpGet("{id}")] 
+        [HttpGet("{id}")]
         public async Task<ActionResult<Expense>> GetExpense(Guid id)
         {
-            return await _context.Expenses.FindAsync(id);
+            return Ok();
         }
 
 
