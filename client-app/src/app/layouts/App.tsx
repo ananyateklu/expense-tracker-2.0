@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Header, List } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 import { Expense } from '../models/expense';
+import  NavBar  from './NavBar';
 
 function App() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div>
-      <Header as='h2' icon='money' content='Expense-Tracker'/>
+      <NavBar/>
        <List>
          {expenses.map(expense  => (
            <List.Item key={expense.id}>
