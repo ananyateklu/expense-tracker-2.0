@@ -1,13 +1,81 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.head {
+  position: absolute;
+  height: 100vh;
+  vertical-align: middle;
+  width: 200px;
+  background-color: #001d4d;
+  padding: 5px;
+}
+
+.logo {
+  width: 100px;
+  margin-top: 47px;
+  margin-left: 47px;
+  position: fixed;
+}
+.logo img {
+  width: 75%;
+}
+.sidebuttons {
+  margin-top: 200px;
+}
+
+.links {
+  color: white;
+}
+.links h6 {
+  display: block;
+  margin-left: 55px;
+  font-size: medium;
+}
+
+.expenses {
+  width: 30px;
+  border-radius: 4px;
+  background-color: transparent;
+  position: fixed;
+  left: 15px;
+}
+
+.income {
+  width: 30px;
+  border-radius: 4px;
+  background-color: transparent;
+  position: fixed;
+  left: 15px;
+}
+
+.mobileLinks {
+  color: black;
+  float: right;
+  position: relative;
+  display: none;
+}
+
+.linkAdd button {
+  margin-left: 20px;
+  margin-top: 30px;
+  padding: 7px 20px 7px 20px;
+  border-radius: 7px;
+}
+.ExpenseList {
+}
+
+.ExpenseDiv {
+  float: left;
+  margin-left: 600px;
 }
