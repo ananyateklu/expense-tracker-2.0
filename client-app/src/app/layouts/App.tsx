@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { List } from 'semantic-ui-react';
-import { Expense } from '../models/expense';
 import  NavBar  from './NavBar';
+import { BrowserRouter as Router } from "react-router-dom";
+import './styles.css';
+import ExpenseList from './ExpenseList';
 
 function App() {
-  const [expenses, setExpenses] = useState<Expense[]>([]);
-
-  useEffect(() => {
-    axios.get<Expense[]>('http://localhost:5000/api/expenses').then(response => {
-      setExpenses(response.data);
-    })
-  }, [])
 
 
   return (
     <div>
+      <Router>
       <NavBar/>
-       <List>
-         {expenses.map(expense  => (
-           <List.Item key={expense.id}>
-             {expense.name}
-           </List.Item>
-         ))}
-       </List>
+      <ExpenseList/>
+      </Router>
     </div>
   );
 }
