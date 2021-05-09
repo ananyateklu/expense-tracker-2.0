@@ -13,7 +13,7 @@ code {
 }
 
 .head {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   vertical-align: middle;
   width: 200px;
