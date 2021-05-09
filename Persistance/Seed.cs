@@ -44,7 +44,7 @@ namespace Persistence
                     Name = "Past Activity 4",
                     Date = DateTime.Now.AddMonths(-3),
                     Description = "Activity 2 months ago",
-                    ExpenseType = "rent",
+                    ExpenseType = "transport",
                     Amount = 630,
                 },
                 new Expense
