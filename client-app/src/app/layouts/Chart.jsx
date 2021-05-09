@@ -3,8 +3,6 @@ import Chart from 'react-apexcharts';
 import './styles.css';
 
 
-
-
 class Donut extends Component {
 
   constructor(props) {
@@ -55,9 +53,10 @@ class Donut extends Component {
           },
         ],
       },
-      series: [44, 55, 41, 17, 15],
+      series: [this.props.utility, this.props.school, this.props.hobby, this.props.transport, this.props.food],
       labels: ['A', 'B', 'C', 'D', 'E']
     }
+    
   }
 
   render() {
