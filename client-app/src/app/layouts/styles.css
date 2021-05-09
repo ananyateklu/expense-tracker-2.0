@@ -78,7 +78,7 @@ code {
   margin-left: 600px;
   width: 50%;
   margin-top: 80px;
-  margin-left: 700px;
+  margin-left: 600px;
   border-radius: 20px;
   z-index: -1;
   position: absolute;
@@ -92,25 +92,24 @@ code {
 }
 
 .remove {
-  width: 27px;
+  width: 20px;
   position: absolute;
   right: 35px;
   margin-left: 20px;
-  margin-top: 25px;
+  margin-top: 33px;
 }
 
 .items {
   float: right;
-  width: 100%;
   border: 0.7mm solid #dbdfe0ef;
-  width: 80%;
+  width: 70%;
   border-radius: 10px;
   margin: 10px 0px 2px 0px;
 }
 
 .typeamount {
   width: 75%;
-  margin-left: 70px;
+  margin-left: 65px;
   margin-top: 20px;
   text-align: left;
   margin-bottom: 20px;
