@@ -103,11 +103,11 @@ namespace Persistence
             {
                 new TotalExpense
                 {
-                     Utility = 456, 
-                     School = 345,
-                     Hobby = 99283,
-                     Transport = 9893,
-                     Food = 9989
+                     Utility = 40, 
+                     School = 1245,
+                     Hobby = 283,
+                     Transport = 193,
+                     Food = 379
         
      
     }   
