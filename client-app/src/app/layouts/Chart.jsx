@@ -12,11 +12,11 @@ class Donut extends Component {
       options: {
         chart: {
           width: 380,
-          type: "donut",
+          type: "Donut",
         },
         plotOptions: {
           pie: {
-            startAngle: -45,
+            startAngle: 0,
           },
         },
         dataLabels: {
