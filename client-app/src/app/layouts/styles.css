@@ -144,3 +144,22 @@ code {
   margin-top: 100px;
   
 }
+.TotalExpenseDiv {
+  position: fixed;
+  margin-top: 350px;
+  margin-left: 300px;
+  border: 1px solid rgb(192, 189, 189);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+
+}
+.TotalExpenseDiv h5 {
+  margin: 0;
+  padding: 0;
+}
+.TotalExpenseDiv h1 {
+  margin: 0;
+  padding: 0;
+}
