@@ -9,14 +9,14 @@ using Persistance;
 namespace Persistance.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210504162540_InitialCreate")]
+    [Migration("20210510184710_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.2");
+                .HasAnnotation("ProductVersion", "5.0.5");
 
             modelBuilder.Entity("Domain.Expense", b =>
                 {
@@ -24,8 +24,8 @@ namespace Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Amount")
+                        .HasColumnType("REAL");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
@@ -42,6 +42,32 @@ namespace Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Expenses");
+                });
+
+            modelBuilder.Entity("Domain.TotalExpense", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Food")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Hobby")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("School")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Transport")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Utility")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TotalExpenses");
                 });
 #pragma warning restore 612, 618
         }

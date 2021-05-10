@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
-import Chart from 'react-apexcharts';
-import './styles.css';
-
+import React, { Component } from "react";
+import Chart from "react-apexcharts";
+import "./styles.css";
 
 class Donut extends Component {
-
   constructor(props) {
     super(props);
 
@@ -12,11 +10,11 @@ class Donut extends Component {
       options: {
         chart: {
           width: 380,
-          type: "donut",
+          type: "Donut",
         },
         plotOptions: {
           pie: {
-            startAngle: -45,
+            startAngle: 0,
           },
         },
         dataLabels: {
@@ -33,7 +31,7 @@ class Donut extends Component {
         title: {
           text: "Expenses",
         },
-        labels: ["Utilities", "School", "Shopping", "Transportation","Food"],
+        labels: ["Utilities", "School", "Shopping", "Transportation", "Food"],
 
         theme: {
           palette: "palette2", // upto palette10
@@ -53,17 +51,26 @@ class Donut extends Component {
           },
         ],
       },
-      series: [this.props.utility, this.props.school, this.props.hobby, this.props.transport, this.props.food],
-      labels: ['A', 'B', 'C', 'D', 'E']
-    }
-    
+      series: [
+        this.props.utility,
+        this.props.school,
+        this.props.hobby,
+        this.props.transport,
+        this.props.food,
+      ],
+      labels: ["A", "B", "C", "D", "E"],
+    };
   }
 
   render() {
-
     return (
       <div className="Donut">
-        <Chart options={this.state.options} series={this.state.series} type="donut" width="380" />
+        <Chart
+          options={this.state.options}
+          series={this.state.series}
+          type="donut"
+          width="380"
+        />
       </div>
     );
   }

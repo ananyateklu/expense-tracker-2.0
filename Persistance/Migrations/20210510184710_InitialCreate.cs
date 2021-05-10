@@ -14,7 +14,7 @@ namespace Persistance.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     ExpenseType = table.Column<string>(type: "TEXT", nullable: true),
-                    Amount = table.Column<int>(type: "INTEGER", nullable: false),
+                    Amount = table.Column<double>(type: "REAL", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: true),
                     Date = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
@@ -22,12 +22,31 @@ namespace Persistance.Migrations
                 {
                     table.PrimaryKey("PK_Expenses", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "TotalExpenses",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Utility = table.Column<double>(type: "REAL", nullable: false),
+                    School = table.Column<double>(type: "REAL", nullable: false),
+                    Hobby = table.Column<double>(type: "REAL", nullable: false),
+                    Transport = table.Column<double>(type: "REAL", nullable: false),
+                    Food = table.Column<double>(type: "REAL", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TotalExpenses", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Expenses");
+
+            migrationBuilder.DropTable(
+                name: "TotalExpenses");
         }
     }
 }

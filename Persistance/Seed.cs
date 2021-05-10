@@ -97,8 +97,25 @@ namespace Persistence
                 },
             };
 
-            await context.Expenses.AddRangeAsync(expenses);
-            await context.SaveChangesAsync();
+            if (context.TotalExpenses.Any()) return;
+
+            var totalExpenses = new List<TotalExpense>
+            {
+                new TotalExpense
+                {
+                     Utility = 40, 
+                     School = 1245,
+                     Hobby = 283,
+                     Transport = 193,
+                     Food = 379
+        
+     
+    }   
+            };
+
+await context.Expenses.AddRangeAsync(expenses);
+await context.TotalExpenses.AddRangeAsync(totalExpenses);
+await context.SaveChangesAsync();
         }
     }
 }
