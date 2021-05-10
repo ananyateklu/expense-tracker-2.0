@@ -10,6 +10,8 @@ namespace Persistance
         }
 
         public DbSet<Expense> Expenses { get; set; }
+
+        public DbSet<TotalExpense> TotalExpenses { get; set; }
         
         
     }
