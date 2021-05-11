@@ -17,14 +17,14 @@ code {
   height: 100vh;
   vertical-align: middle;
   width: 200px;
-  background-color: #001d4d;
+  background-color: #112d4e;
   padding: 5px;
 }
 
 .logo {
   width: 100px;
   margin-top: 47px;
-  margin-left: 47px;
+  margin-left: 52px;
   position: fixed;
 }
 .logo img {
@@ -44,11 +44,13 @@ code {
 }
 
 .expenses {
-  width: 30px;
-  border-radius: 4px;
-  background-color: transparent;
+  width: 45px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid #3f72af;
+  background-color: #f9f7f7;
   position: fixed;
-  left: 15px;
+  left: 75px;
 }
 
 .income {
@@ -66,11 +68,15 @@ code {
   display: none;
 }
 
-.linkAdd button {
-  margin-left: 20px;
-  margin-top: 30px;
-  padding: 7px 20px 7px 20px;
-  border-radius: 7px;
+.linkAdd img {
+  width: 45px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid #3f72af;
+  background-color: #f9f7f7;
+  position: fixed;
+  margin-top: 80px;
+  left: 75px;
 }
 
 .ExpenseDiv {
