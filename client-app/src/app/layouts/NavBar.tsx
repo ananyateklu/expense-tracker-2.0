@@ -16,18 +16,14 @@ export default function NavBar() {
             <img
               alt="expenses"
               className="expenses"
-              src="https://img.icons8.com/ios-filled/50/ffffff/receipt-dollar.png"
-            /><h6>My Expenses</h6>
-          </Link>
-          <Link className="links" to="/income">
-            <img
-              alt="income"
-              className="income"
-              src="https://img.icons8.com/fluent-systems-filled/48/ffffff/receive-euro.png"
-            /> <h6> My Income</h6>
+              src="./assets/dashboard.png"
+            />
           </Link>
           <Link className="linkAdd" to="/create">
-            <button>Add Expense</button>
+            <img 
+              alt="addexpense"
+              className="addexpense"
+              src="./assets/addexpense.png"/>
           </Link>
           <Link className="mobileLinks" to="/">
             <Menu />
