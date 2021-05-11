@@ -96,7 +96,7 @@ code {
   position: absolute;
   right: 35px;
   margin-left: 20px;
-  margin-top: 33px;
+  margin-top: 31px;
 }
 
 .items {
@@ -123,16 +123,17 @@ code {
 
 .type {
   float: right;
-  margin-top: 14px;
+  margin-top: 11px;
 }
 
 .etype img {
-  width: 55px;
-  padding: 5px;
-  margin-top: 20px;
-  border-radius: 10px;
+  width: 35px;
+  padding: 7px;
+  margin-top: 25px;
+  border-radius: 30px;
   position: absolute;
-  padding-left: 20px;
+  margin-left: 20px;
+  border: 1px solid rgb(206, 201, 201);
 }
 .etype {
   display: inline;
