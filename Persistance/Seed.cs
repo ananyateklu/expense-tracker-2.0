@@ -17,7 +17,7 @@ namespace Persistence
             {
                 new Expense
                 {
-                    Name = "Past Activity 1",
+                    Name = "Subway Sandwich",
                     Date = DateTime.Now.AddMonths(-2),
                     Description = "Activity 2 months ago",
                     ExpenseType = "food",
@@ -25,7 +25,7 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 2",
+                    Name = "Electricity",
                     Date = DateTime.Now.AddMonths(-7),
                     Description = "Activity 2 months ago",
                     ExpenseType = "utility",
@@ -33,7 +33,7 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 3",
+                    Name = "Tuition",
                     Date = DateTime.Now.AddMonths(-11),
                     Description = "Activity 2 months ago",
                     ExpenseType = "school",
@@ -41,15 +41,15 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 4",
+                    Name = "Gas",
                     Date = DateTime.Now.AddMonths(-3),
                     Description = "Activity 2 months ago",
                     ExpenseType = "transport",
-                    Amount = 630,
+                    Amount = 35,
                 },
                 new Expense
                 {
-                    Name = "Past Activity 5",
+                    Name = "Portable Speaker",
                     Date = DateTime.Now.AddMonths(-9),
                     Description = "Activity 2 months ago",
                     ExpenseType = "hobby",
@@ -57,7 +57,7 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 6",
+                    Name = "Burger King",
                     Date = DateTime.Now.AddMonths(-22),
                     Description = "Activity 2 months ago",
                     ExpenseType = "food",
@@ -65,7 +65,7 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 7",
+                    Name = "Sushi",
                     Date = DateTime.Now.AddMonths(-42),
                     Description = "Activity 2 months ago",
                     ExpenseType = "food",
@@ -73,7 +73,7 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 8",
+                    Name = "Video Game",
                     Date = DateTime.Now.AddMonths(-32),
                     Description = "Activity 2 months ago",
                     ExpenseType = "hobby",
@@ -81,7 +81,7 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 9",
+                    Name = "Books",
                     Date = DateTime.Now.AddMonths(-7),
                     Description = "Activity 2 months ago",
                     ExpenseType = "school",
@@ -89,7 +89,7 @@ namespace Persistence
                 },
                 new Expense
                 {
-                    Name = "Past Activity 10",
+                    Name = "McDonalds",
                     Date = DateTime.Now.AddMonths(-6),
                     Description = "Activity 2 months ago",
                     ExpenseType = "food",
@@ -103,7 +103,7 @@ namespace Persistence
             {
                 new TotalExpense
                 {
-                     Utility = 40, 
+                     Utility = 50, 
                      School = 1245,
                      Hobby = 283,
                      Transport = 193,
