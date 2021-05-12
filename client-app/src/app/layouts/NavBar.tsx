@@ -1,5 +1,4 @@
 import React from 'react';
-import { Menu, } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import  Logo  from './assets/Logo.png';
 
@@ -25,9 +24,6 @@ export default function NavBar() {
               className="addexpense"
               src="./assets/addexpense.png"/>
               <h5>Add Expense</h5> 
-          </Link>
-          <Link className="mobileLinks" to="/">
-            <Menu />
           </Link>
         </div>
       </header>
