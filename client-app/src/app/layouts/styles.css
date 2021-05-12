@@ -44,14 +44,21 @@ code {
 }
 
 .expenses {
-  width: 45px;
-  padding: 10px;
-  border-radius: 18px;
+  width: 35px;
+  padding: 5px;
+  border-radius: 10px;
   border: 1px solid #3f72af;
   background-color: #f9f7f7;
   position: fixed;
-  left: 75px;
+  left: 35px;
 }
+.links h5 {
+  left: 75px;
+  position: fixed;
+  margin-left: 10px;
+  margin-top: 9px;;
+}
+
 
 .income {
   width: 30px;
@@ -67,16 +74,27 @@ code {
   position: relative;
   display: none;
 }
+.linkAdd {
+  color: white;
+}
 
 .linkAdd img {
-  width: 45px;
-  padding: 10px;
-  border-radius: 18px;
+  width: 35px;
+  padding: 5px;
+  border-radius: 10px;
   border: 1px solid #3f72af;
   background-color: #f9f7f7;
   position: fixed;
   margin-top: 80px;
+  left: 35px;
+}
+
+.linkAdd h5 {
   left: 75px;
+  position: fixed;
+  margin-top: 88px;
+  margin-left: 10px;
+  
 }
 
 .ExpenseDiv {

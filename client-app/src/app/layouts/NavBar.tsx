@@ -17,13 +17,14 @@ export default function NavBar() {
               alt="expenses"
               className="expenses"
               src="./assets/dashboard.png"
-            />
+            /><h5>Dashboard</h5>
           </Link>
           <Link className="linkAdd" to="/create">
             <img 
               alt="addexpense"
               className="addexpense"
               src="./assets/addexpense.png"/>
+              <h5>Add Expense</h5> 
           </Link>
           <Link className="mobileLinks" to="/">
             <Menu />
