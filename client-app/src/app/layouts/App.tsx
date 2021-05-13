@@ -28,11 +28,9 @@ function App() {
     <div>
       <Router>
         <NavBar />
-        <div className="maindiv">
         <TExpense />
         {chartData}
         <ExpenseList />
-        </div>
       </Router>
     </div>
   );
