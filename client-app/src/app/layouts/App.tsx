@@ -25,13 +25,14 @@ function App() {
   if (loading) return <Loading content='Loading app'/>
   const chartData = totalExpenses.map((type) => (<Donat key="Donat" food={type.food} utility={type.utility} school={type.school} transport={type.transport} hobby={type.hobby} />))
   return (
-
     <div>
       <Router>
         <NavBar />
+        <div className="maindiv">
         <TExpense />
         {chartData}
         <ExpenseList />
+        </div>
       </Router>
     </div>
   );
