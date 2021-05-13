@@ -18,14 +18,14 @@ namespace API.Extensions
           {
               c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
           });
-            // services.AddDbContext<DataContext>(opt =>
-            // {
-            //     opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
-            // });
-
             services.AddDbContext<DataContext>(opt =>
-                opt.UseSqlServer(
-                    config.GetConnectionString("DefaultConnection")));
+            {
+                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+            });
+
+            // services.AddDbContext<DataContext>(opt =>
+            //     opt.UseSqlServer(
+            //         config.GetConnectionString("DefaultConnection")));
 
 
             services.AddCors(opt =>

@@ -11,12 +11,12 @@ namespace Persistance.Migrations
                 name: "Expenses",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ExpenseType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Amount = table.Column<double>(type: "float", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    ExpenseType = table.Column<string>(type: "TEXT", nullable: true),
+                    Amount = table.Column<double>(type: "REAL", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
+                    Date = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,12 +27,12 @@ namespace Persistance.Migrations
                 name: "TotalExpenses",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Utility = table.Column<double>(type: "float", nullable: false),
-                    School = table.Column<double>(type: "float", nullable: false),
-                    Hobby = table.Column<double>(type: "float", nullable: false),
-                    Transport = table.Column<double>(type: "float", nullable: false),
-                    Food = table.Column<double>(type: "float", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Utility = table.Column<double>(type: "REAL", nullable: false),
+                    School = table.Column<double>(type: "REAL", nullable: false),
+                    Hobby = table.Column<double>(type: "REAL", nullable: false),
+                    Transport = table.Column<double>(type: "REAL", nullable: false),
+                    Food = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
