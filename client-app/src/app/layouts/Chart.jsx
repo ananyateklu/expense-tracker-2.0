@@ -21,7 +21,7 @@ class Donut extends Component {
           enabled: false,
         },
         fill: {
-          type: "gradient",
+          type: "solid",
         },
         legend: {
           formatter: function (val, opts) {
