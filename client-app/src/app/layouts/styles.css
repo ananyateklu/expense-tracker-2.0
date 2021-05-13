@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f7f7;
 }
 
 code {
@@ -127,6 +128,7 @@ code {
   float: right;
   border: 0.7mm solid #dbdfe0ef;
   width: 70%;
+  background-color: white;
   border-radius: 10px;
   margin: 10px 0px 2px 0px;
 }
@@ -178,6 +180,7 @@ code {
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20px;
+  background-color: white;
 
 }
 .TotalExpenseDiv h5 {
