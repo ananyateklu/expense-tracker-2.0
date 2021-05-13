@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f9f7f7;
+  z-index: -1;
 }
 
 code {
@@ -105,7 +106,7 @@ code {
   margin-top: 80px;
   margin-left: 600px;
   border-radius: 20px;
-  z-index: -1;
+  z-index: 3;
   position: absolute;
   scroll-behavior: smooth;
   overflow: auto;
@@ -116,49 +117,61 @@ code {
   margin-right: 2%;
 }
 
-.remove {
-  width: 20px;
-  position: absolute;
-  right: 35px;
-  margin-left: 20px;
-  margin-top: 31px;
+
+.remove:hover {
+  background-color: #112d4e;
 }
+
+
 
 .items {
   float: right;
-  border: 0.7mm solid #dbdfe0ef;
+  border: 0.1mm solid #cdd0d1ef;
   width: 70%;
+  height: 70px;
   background-color: white;
   border-radius: 10px;
-  margin: 10px 0px 2px 0px;
+  margin: 5px 0px 2px 0px;
 }
 
 .typeamount {
-  width: 75%;
+  width: 55%;
   margin-left: 65px;
-  margin-top: 20px;
   text-align: left;
-  margin-bottom: 20px;
+  position: absolute;
+  margin-top: 10px;
+  margin-bottom: 16px;
 }
 
-.typeamount h6 {
+.Tbutton {
+  position: relative;
+  margin-top: 2px;
+  padding-top: 5px;
+  margin-right: 5px;
+  float: right;
+}
+
+.items h6 {
   font-size: 15px;
   margin-top: 0px;
   margin-bottom: 5px;
 }
 
 .type {
+  position: absolute;
+  right: 70px;
   float: right;
-  margin-top: 11px;
+  margin-top: 12px;
+
 }
 
 .etype img {
   width: 35px;
   padding: 7px;
-  margin-top: 25px;
+  margin-top: 18px;
   border-radius: 30px;
   position: absolute;
-  margin-left: 20px;
+  margin-left: 17px;
   border: 1px solid rgb(206, 201, 201);
 }
 .etype {

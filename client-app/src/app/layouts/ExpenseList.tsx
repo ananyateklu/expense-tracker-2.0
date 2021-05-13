@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import { Expense } from '../models/expense';
 import axios from 'axios';
 import dateFormat from 'dateformat';
+import { Button, Icon } from 'semantic-ui-react';
 
 
 
 const ExpenseList = () => {
 
     const [expenses, setExpenses] = useState<Expense[]>([]);
+    const [submitting, setSubmitting] = useState(false);
+    const [target, setTarget] = useState('');
 
     useEffect(() => {
         axios.get<Expense[]>('http://localhost:5000/api/expenses').then(response => {
@@ -15,33 +18,60 @@ const ExpenseList = () => {
         })
     }, [])
 
+    function DeleteActivity(id: string) {
+        setSubmitting(true);
+        axios.delete(`http://localhost:5000/api/expenses/${id}`).then(() => {
+            setExpenses([...expenses.filter(x => x.id !== id)]);
+            setSubmitting(false);
+        })
 
-    return <div className="ExpenseDiv">
-        {expenses.map(expense => (
-            <div className="ExpenseList" key={expense.id}>
-                <div className="entries">
-                    <div className="items">
-                        <div className="etype">
-                            <img alt="icons" src={`/assets/${expense.expenseType}.png`} />
-                        </div>
-                        <img className="remove" alt="remove" src="https://img.icons8.com/fluent-systems-regular/50/4a90e2/filled-trash.png" />
-                        <div className="typeamount">
+    }
+
+    function handleActivityDelete(e: SyntheticEvent<HTMLImageElement>, id: string) {
+        setTarget(e.currentTarget.name);
+        DeleteActivity(id);
+    }
+
+    return (
+        <div className="ExpenseDiv">
+            {expenses.map(expense => (
+                <div className="ExpenseList" key={expense.id}>
+                    <div className="entries">
+                        <div className="items">
+                            <div className="etype">
+                                <img alt="icons" src={`/assets/${expense.expenseType}.png`} />
+                            </div>
+                            
+
+                            
+                            <div className="typeamount">
                             <small className="type">$ {expense.amount}</small>
+                            <div className="Tbutton">
+                                <Button
+                                    loading={submitting && target === expense.id}
+                                    onClick={(e: any) => handleActivityDelete(e, expense.id)}
+                                    floated='right'
+                                    size= 'mini'
+                                    icon >
+                                    <Icon name='trash' />
 
-                            <h6 className="iname">{expense.name}</h6>
+                                </Button>
+                            </div>
+                              
 
-                            <small>{(dateFormat(expense.date, "mmmm dS"))}</small>
+                                <h6>{expense.name}</h6>
+
+                                <small>{(dateFormat(expense.date, "mmmm dS"))}</small>
+
+                            </div>
 
                         </div>
 
                     </div>
-
                 </div>
-            </div>
-        ))}
-    </div>
-
-
+            ))}
+        </div>
+    )
 
 }
 
