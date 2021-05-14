@@ -31,7 +31,7 @@ class Donut extends Component {
         title: {
           text: "Expenses",
         },
-        labels: ["Utilities", "School", "Shopping", "Transportation", "Food"],
+        labels: ["Utilities", "School", "Shopping", "Transport", "Food"],
 
         theme: {
           palette: "palette2", // upto palette10
@@ -42,7 +42,7 @@ class Donut extends Component {
             breakpoint: 480,
             options: {
               chart: {
-                width: 380,
+                width: 320,
               },
               //   legend: {
               //     position: 'bottom'
@@ -69,7 +69,7 @@ class Donut extends Component {
           options={this.state.options}
           series={this.state.series}
           type="donut"
-          width="380"
+          
         />
       </div>
     );
