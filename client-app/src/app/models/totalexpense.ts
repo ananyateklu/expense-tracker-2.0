@@ -5,4 +5,5 @@ export interface TotalExpense {
     hobby: number;
     transport: number; 
     food: number; 
+    total: number;
 }

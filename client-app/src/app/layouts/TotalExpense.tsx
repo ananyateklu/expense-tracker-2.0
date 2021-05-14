@@ -17,7 +17,7 @@ const TExpense = () => {
     return (
         <div>
             {totalExpenses.map(totalExpense => (
-                <div className='TotalExpenseDiv' key={totalExpense.id}><h1> <img  alt="money" src="/assets/money.png" /> $ {totalExpense.school}</h1><h5>Total Expenses</h5></div>
+                <div className='TotalExpenseDiv' key={totalExpense.id}><h1> <img  alt="money" src="/assets/money.png" /> $ {totalExpense.total}</h1><h5>Total Expenses</h5></div>
             ))}
         </div>
     )
