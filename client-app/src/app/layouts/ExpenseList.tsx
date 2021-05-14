@@ -34,6 +34,7 @@ const ExpenseList = () => {
 
     return (
         <div className="ExpenseDiv">
+            <h4>Transactions</h4>
             {expenses.map(expense => (
                 <div className="ExpenseList" key={expense.id}>
                     <div className="entries">
