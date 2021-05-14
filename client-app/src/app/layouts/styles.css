@@ -286,7 +286,7 @@ scrollbar-width: none;  /* Firefox */
   width: 30px;
   padding: 2px; 
   margin: 0; 
-  border: 1px solid green;
+  border: 1px solid rgb(83, 154, 221);
   border-radius: 60%; 
 }
 
