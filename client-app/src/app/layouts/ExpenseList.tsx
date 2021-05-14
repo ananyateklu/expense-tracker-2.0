@@ -1,6 +1,5 @@
 import { SyntheticEvent, useEffect, useState } from 'react';
 import { Expense } from '../models/expense';
-import axios from 'axios';
 import dateFormat from 'dateformat';
 import { Button, Icon } from 'semantic-ui-react';
 import agent from '../api/agent';
@@ -21,14 +20,14 @@ const ExpenseList = () => {
 
     function DeleteActivity(id: string) {
         setSubmitting(true);
-        axios.delete(`http://localhost:5000/api/expenses/${id}`).then(() => {
+        agent.Expenses.delete(id).then(() => {
             setExpenses([...expenses.filter(x => x.id !== id)]);
             setSubmitting(false);
         })
 
     }
 
-    function handleActivityDelete(e: SyntheticEvent<HTMLImageElement>, id: string) {
+    function handleActivityDelete(e: SyntheticEvent<HTMLButtonElement>, id: string) {
         setTarget(e.currentTarget.name);
         DeleteActivity(id);
     }
@@ -43,19 +42,18 @@ const ExpenseList = () => {
                             <div className="etype">
                                 <img alt="icons" src={`/assets/${expense.expenseType}.png`} />
                             </div>
-                            
-
-                            
                             <div className="typeamount">
                             <small className="type">$ {expense.amount}</small>
                             <div className="Tbutton">
                                 <Button
+                                    name={expense.id}
                                     loading={submitting && target === expense.id}
-                                    onClick={(e: any) => handleActivityDelete(e, expense.id)}
+                                    onClick={(e: any) => handleActivityDelete(e, expense.id)} 
                                     floated='right'
                                     size= 'mini'
                                     icon >
-                                    <Icon name='trash' />
+                                    <Icon 
+                                          name='trash' />
 
                                 </Button>
                             </div>
