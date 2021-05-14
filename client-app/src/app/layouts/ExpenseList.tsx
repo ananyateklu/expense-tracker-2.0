@@ -3,6 +3,7 @@ import { Expense } from '../models/expense';
 import axios from 'axios';
 import dateFormat from 'dateformat';
 import { Button, Icon } from 'semantic-ui-react';
+import agent from '../api/agent';
 
 
 
@@ -13,8 +14,8 @@ const ExpenseList = () => {
     const [target, setTarget] = useState('');
 
     useEffect(() => {
-        axios.get<Expense[]>('http://localhost:5000/api/expenses').then(response => {
-            setExpenses(response.data);
+        agent.Expenses.list().then(response => {
+            setExpenses(response);
         })
     }, [])
 
