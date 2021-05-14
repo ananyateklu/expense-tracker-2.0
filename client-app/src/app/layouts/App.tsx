@@ -7,7 +7,7 @@ import TExpense from './TotalExpense';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { TotalExpense } from '../models/totalexpense';
-import  TotalIncome  from './TotalIncome';
+import TotalIncome from './TotalIncome';
 import Loading from './Loading';
 import Top from './Top';
 
@@ -24,15 +24,18 @@ function App() {
     })
   }, [])
 
-  if (loading) return <Loading content='Loading app'/>
+  if (loading) return <Loading content='Loading app' />
   const chartData = totalExpenses.map((type) => (<Donat key="Donat" food={type.food} utility={type.utility} school={type.school} transport={type.transport} hobby={type.hobby} />))
   return (
     <div>
       <Router>
         <NavBar />
-         <Top/>
-        <TExpense />
-        <TotalIncome/>
+        <Top />
+        <div className="TotalAll">
+          <TExpense />
+          <TotalIncome />
+        </div>
+
         {chartData}
         <ExpenseList />
       </Router>

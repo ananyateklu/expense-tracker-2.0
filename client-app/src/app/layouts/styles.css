@@ -118,7 +118,7 @@ code {
 .ExpenseDiv {
   float: left;
   width: 30%;
-  height: 500px;
+  height: 540px;
   margin-top: 70px;
   margin-left: 60vw;
   z-index: 3;
@@ -215,14 +215,14 @@ scrollbar-width: none;  /* Firefox */
 
 .Donut {
   position: fixed;
-  margin-left: 300px;
+  margin-left: 21%;
   margin-top: 40px;
   
 }
 .TotalExpenseDiv {
   position: fixed;
   margin-top: 270px;
-  margin-left: 300px;
+  
   border: 1px solid rgb(192, 189, 189);
   padding: 10px;
   padding-left: 20px;
@@ -240,10 +240,15 @@ scrollbar-width: none;  /* Firefox */
   padding: 0;
 }
 
+.TotalAll {
+  margin-left: 22vw;
+  position: absolute;
+}
+
 .TotalIncomeDiv {
-  position: fixed;
+  position: relative;
   margin-top: 270px;
-  margin-left: 520px;
+  margin-left: 210px;
   border: 1px solid rgb(192, 189, 189);
   padding: 10px;
   padding-left: 20px;
