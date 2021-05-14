@@ -18,7 +18,7 @@ code {
   position: fixed;
   height: 100vh;
   vertical-align: middle;
-  width: 200px;
+  width: 150px;
   background-color: #112d4e;
   padding: 5px;
 }
@@ -45,18 +45,22 @@ code {
 .logo {
   width: 100px;
   margin-top: 47px;
-  margin-left: 52px;
+  margin-left: 29px;
   position: fixed;
 }
 .logo img {
   width: 75%;
 }
 .sidebuttons {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .links {
   color: white;
+  padding-top: 80px;
+  margin-left: 8px;
+  position: absolute;
+  
 }
 .links h6 {
   display: block;
@@ -64,20 +68,21 @@ code {
   font-size: medium;
 }
 
-.expenses {
+/* .expenses {
   width: 35px;
   padding: 5px;
+  margin-top: 20px;
   border-radius: 10px;
   border: 1px solid #3f72af;
   background-color: #f9f7f7;
   position: fixed;
   left: 35px;
-}
+} */
 .links h5 {
   left: 75px;
   position: fixed;
   margin-left: 10px;
-  margin-top: 9px;;
+  
 }
 
 
@@ -97,17 +102,9 @@ code {
 }
 .linkAdd {
   color: white;
-}
-
-.linkAdd img {
-  width: 35px;
-  padding: 5px;
-  border-radius: 10px;
-  border: 1px solid #3f72af;
-  background-color: #f9f7f7;
-  position: fixed;
-  margin-top: 80px;
-  left: 35px;
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 5px;
 }
 
 .linkAdd h5 {
@@ -413,6 +410,10 @@ scrollbar-width: none;  /* Firefox */
     margin-top: 100px;
     
   }
+  .links {
+    display: none;
+  }
+  
   .linkAdd {
     display: none;
     width: 35px;
