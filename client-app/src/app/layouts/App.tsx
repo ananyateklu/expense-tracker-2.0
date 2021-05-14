@@ -7,7 +7,9 @@ import TExpense from './TotalExpense';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { TotalExpense } from '../models/totalexpense';
+import  TotalIncome  from './TotalIncome';
 import Loading from './Loading';
+import Top from './Top';
 
 function App() {
   const [totalExpenses, setTotalExpenses] = useState<TotalExpense[]>([]);
@@ -28,7 +30,9 @@ function App() {
     <div>
       <Router>
         <NavBar />
+         <Top/>
         <TExpense />
+        <TotalIncome/>
         {chartData}
         <ExpenseList />
       </Router>
