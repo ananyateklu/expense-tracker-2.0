@@ -25,11 +25,13 @@ const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 const requests = {
     get: <T>(url: string) => axios.get<T>(url).then(responseBody),
     del: <T>(url: string) => axios.delete<T>(url).then(responseBody),
+    put: <T>(url: string) => axios.put<T>(url).then(responseBody),
 }
 
 const Expenses = {
     list: () => requests.get<Expense[]>('/expenses'),
-    delete: (id: string) => axios.delete<void>(`/expenses/${id}`)
+    delete: (id: string) => axios.delete<void>(`/expenses/${id}`),
+    update: (expense: Expense) => axios.put(`/expenses/${expense.id}`, expense)
     
 }
 
