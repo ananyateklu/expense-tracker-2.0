@@ -226,6 +226,7 @@ scrollbar-width: none;  /* Firefox */
   border: 1px solid rgb(192, 189, 189);
   padding: 10px;
   padding-left: 20px;
+  width: 190px;
   padding-right: 20px;
   border-radius: 20px;
   background-color: white;
@@ -256,6 +257,7 @@ scrollbar-width: none;  /* Firefox */
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  width: 150px;
   border-radius: 20px;
   background-color: white;
 
