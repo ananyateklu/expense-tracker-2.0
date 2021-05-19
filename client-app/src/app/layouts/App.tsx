@@ -19,7 +19,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [selectedExpense, setSelectedExpense] = useState<Expense | undefined>(undefined);
-  const [editMode, setEditMode] = useState(false);
   const [submitting, setSubmitiing] = useState(false);
 
 
@@ -39,13 +38,13 @@ function App() {
     })
   }, [])
 
-  function handleSelectExpense(id: string) {
-    setSelectedExpense(expenses.find(x => x.id))
-  }
+  // function handleSelectExpense(id: string) {
+  //   setSelectedExpense(expenses.find(x => x.id))
+  // }
 
-  function handleCancelSelectExpense() {
-    setSelectedExpense(undefined);
-  }
+  // function handleCancelSelectExpense() {
+  //   setSelectedExpense(undefined);
+  // }
 
   function handleCreateOrEditExpense(expense: Expense) {
     setSubmitiing(true);
@@ -53,7 +52,6 @@ function App() {
       agent.Expenses.update(expense).then(() => {
       setExpenses([...expenses.filter(a => a.id !== expense.id), expense])
       setSelectedExpense(expense);
-      setEditMode(false);
       setSubmitiing(false);
       })
     } else {
@@ -61,14 +59,12 @@ function App() {
       agent.Expenses.create(expense).then(() => {
         setExpenses([...expenses, expense])
         setSelectedExpense(expense);
-        setEditMode(false);
         setSubmitiing(false);
       })
     }
 
     expense.id ? setExpenses([...expenses.filter(x => x.id !== expense.id), expense])
       : setExpenses([...expenses, { ...expense, id: uuid()}]);
-      setEditMode(false);
       setSelectedExpense(expense);
 
   }

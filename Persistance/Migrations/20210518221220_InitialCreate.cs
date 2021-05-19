@@ -38,6 +38,19 @@ namespace Persistance.Migrations
                 {
                     table.PrimaryKey("PK_TotalExpenses", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "TotalIncomes",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    IncomeType = table.Column<string>(type: "TEXT", nullable: true),
+                    Amount = table.Column<double>(type: "REAL", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TotalIncomes", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -47,6 +60,9 @@ namespace Persistance.Migrations
 
             migrationBuilder.DropTable(
                 name: "TotalExpenses");
+
+            migrationBuilder.DropTable(
+                name: "TotalIncomes");
         }
     }
 }

@@ -42,6 +42,23 @@ namespace Persistance.Migrations
                     b.ToTable("Expenses");
                 });
 
+            modelBuilder.Entity("Domain.Income", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("IncomeType")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TotalIncomes");
+                });
+
             modelBuilder.Entity("Domain.TotalExpense", b =>
                 {
                     b.Property<Guid>("Id")
