@@ -6,13 +6,15 @@ import Logo from './assets/Logo.png';
 
 
 interface Props {
-    selectedExpense: Expense | undefined;
+    expense: Expense | undefined;
+    // selectedExpense: Expense | undefined;
+    editMode: boolean;
     createOrEdit: (expense: Expense) => void;
     submitting: boolean;
 }
 
 
-export default function NavBar({ selectedExpense, createOrEdit, submitting}: Props) {
+export default function NavBar({ expense: selectedExpense, createOrEdit, submitting}: Props) {
 
   const initialState = selectedExpense ?? {
         id: '',
