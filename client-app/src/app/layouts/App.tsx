@@ -5,7 +5,6 @@ import ExpenseList from './ExpenseList';
 import Donat from './Chart.jsx';
 import TExpense from './TotalExpense';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { TotalExpense } from '../models/totalexpense';
 import TotalIncome from './TotalIncome';
 import Loading from './Loading';
@@ -20,13 +19,13 @@ function App() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [selectedExpense, setSelectedExpense] = useState<Expense | undefined>(undefined);
   const [submitting, setSubmitiing] = useState(false);
-
-
-
+  
   useEffect(() => {
-    axios.get<TotalExpense[]>('http://localhost:5000/api/TotalExpense').then(response => {
-      setTotalExpenses(response.data);
+    agent.Expenses.totalExpense().then(response => {
+      setTotalExpenses(response);
+      setLoading(false);
     })
+   
     agent.Expenses.list().then(response => {
       let expenses: Expense[] = [];
       response.forEach(expense => {
@@ -35,6 +34,7 @@ function App() {
       })
       setExpenses(expenses);
       setLoading(false);
+      
     })
   }, [])
 
@@ -82,8 +82,10 @@ function App() {
            />
         <Top />
         <div className="TotalAll">
+         
           <TExpense />
           <TotalIncome />
+
         </div>
 
         {chartData}
