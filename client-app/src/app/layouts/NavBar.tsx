@@ -46,12 +46,12 @@ export default function NavBar({ expense: selectedExpense, createOrEdit, submitt
       </Link>
       <div className="sidebuttons">
         <Link className="links" to="/">
-          <Button color='teal' icon='home' content='Dashboard' size='small' />
+          <Button icon='home'  size='small' />
         </Link>
         <Link className="linkAdd" to="">
           <Popup
             trigger={
-              <Button color='blue' icon='add' content='Add Expense' size='small' />
+              <Button  icon='add'  size='small' />
             }
             content={
               <Segment clearing>
