@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { Expense } from '../models/expense';
+import { TotalExpense } from '../models/totalexpense';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -12,7 +13,7 @@ axios.defaults.baseURL= 'http://localhost:5000/api';
 
 axios.interceptors.response.use( async response => {
     try {
-        await sleep(200)
+        await sleep(500)
         return response;
     } catch (error) {
         console.log(error);
@@ -33,7 +34,8 @@ const Expenses = {
     list: () => requests.get<Expense[]>('/expenses'),
     delete: (id: string) => axios.delete<void>(`/expenses/${id}`),
     update: (expense: Expense) => axios.put(`/expenses/${expense.id}`, expense),
-    create: (expense: Expense) => axios.post<void>('/expenses', expense)
+    create: (expense: Expense) => axios.post<void>('/expenses', expense),
+    totalExpense: () => requests.get<TotalExpense[]>('/TotalExpense'),
     
 }
 
