@@ -57,7 +57,8 @@ const ExpenseList = () => {
                                             size='mini'
                                             icon >
                                             <Icon
-                                                name='trash' />
+                                                name='trash alternate outline'
+                                                 />
 
                                         </Button>
                                     </div>
