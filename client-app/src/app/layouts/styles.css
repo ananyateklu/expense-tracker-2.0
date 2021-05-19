@@ -26,7 +26,7 @@ code {
 .Top {
   position: fixed;
   width: 100%;
-  margin-left: 200px;
+  margin-left: 100px;
   height: 70px;
   margin-bottom: 30px;
   padding: 5px;
@@ -215,7 +215,7 @@ scrollbar-width: none;  /* Firefox */
 
 .Donut {
   position: fixed;
-  margin-left: 21%;
+  margin-left: 17%;
   width: 370px;
   margin-top: 90px;
   
@@ -244,7 +244,7 @@ scrollbar-width: none;  /* Firefox */
 }
 
 .TotalAll {
-  margin-left: 22vw;
+  margin-left: 18vw;
   margin-top: 30px;
   position: absolute;
 }
