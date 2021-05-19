@@ -28,6 +28,7 @@ export default function NavBar({ selectedExpense, createOrEdit, submitting}: Pro
   function handleSubmit() {
     console.log(expense);
     createOrEdit(expense);
+    window.location.reload();
 
   }
 
