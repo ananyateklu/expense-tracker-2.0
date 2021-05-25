@@ -60,6 +60,7 @@ function App() {
         setExpenses([...expenses.filter(x => x.id !== id)]);
         setSubmitting(false);
     })
+    window.location.reload();
   }
 
   function handleCreateOrEditExpense(expense: Expense) {
