@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Transition } from 'semantic-ui-react';
 import agent from '../api/agent';
-import { TotalExpense } from '../models/totalexpense';
 import { TotalIncome } from '../models/totalincome';
 
 

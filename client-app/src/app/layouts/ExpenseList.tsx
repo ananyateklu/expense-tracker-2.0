@@ -8,9 +8,11 @@ interface Props {
     expenses: Expense[];
     deleteExpense: (id: string) => void;
     submitting: boolean;
+    openForm: (id: string) => void;
+    closeForm: () => void;
 }
 
-function ExpenseList({expenses, deleteExpense, submitting }: Props) {
+function ExpenseList({expenses, deleteExpense, submitting, openForm, closeForm }: Props) {
 
     const [target, setTarget] = useState('');
     const [visible, setvisible] = useState(false);

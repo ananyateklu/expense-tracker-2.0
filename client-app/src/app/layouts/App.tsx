@@ -109,7 +109,8 @@ function App() {
         </div>
 
         {chartData}
-        <ExpenseList expenses={expenses} deleteExpense={DeleteExpense} submitting={submitting} />
+        <ExpenseList expenses={expenses} deleteExpense={DeleteExpense} submitting={submitting} openForm={handleFormOpen}
+          closeForm={handleFormClose}/>
       </Router>
     </div>
   );
