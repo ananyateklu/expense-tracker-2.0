@@ -28,7 +28,6 @@ export default function NavBar({ expense: selectedExpense, createOrEdit, submitt
   const [expense, setExpense] = useState(initialState);
 
   function handleSubmit() {
-    console.log(expense);
     createOrEdit(expense);
     window.location.reload();
 
@@ -54,6 +53,7 @@ export default function NavBar({ expense: selectedExpense, createOrEdit, submitt
               <Button  icon='add'  size='small' />
             }
             content={
+              
               <Segment clearing>
                 <Form  autoComplete='off' >
                   <Form.Input placeholder='Name' value={expense.name} name='name' onChange={handleInputChange}/>
