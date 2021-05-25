@@ -126,6 +126,7 @@ namespace Persistence
 
 await context.Expenses.AddRangeAsync(expenses);
 await context.TotalExpenses.AddRangeAsync(totalExpenses);
+await context.TotalIncomes.AddRangeAsync(totalIncomes);
 await context.SaveChangesAsync();
         }
     }
