@@ -2,37 +2,30 @@ import { SyntheticEvent, useEffect, useState } from 'react';
 import { Expense } from '../models/expense';
 import dateFormat from 'dateformat';
 import { Button, Icon, Transition } from 'semantic-ui-react';
-import agent from '../api/agent';
 
 
+interface Props {
+    expenses: Expense[];
+    deleteExpense: (id: string) => void;
+    submitting: boolean;
+    openForm: (id: string) => void;
+    closeForm: () => void;
+}
 
-const ExpenseList = () => {
+function ExpenseList({expenses, deleteExpense, submitting, openForm, closeForm }: Props) {
 
-    const [expenses, setExpenses] = useState<Expense[]>([]);
-    const [submitting, setSubmitting] = useState(false);
     const [target, setTarget] = useState('');
     const [visible, setvisible] = useState(false);
 
 
     useEffect(() => {
-        agent.Expenses.list().then(response => {
-            setExpenses(response);
             setvisible(true);
-        })
     }, [])
 
-    function DeleteActivity(id: string) {
-        setSubmitting(true);
-        agent.Expenses.delete(id).then(() => {
-            setExpenses([...expenses.filter(x => x.id !== id)]);
-            setSubmitting(false);
-        })
 
-    }
-
-    function handleActivityDelete(e: SyntheticEvent<HTMLButtonElement>, id: string) {
+    function handleExpenseDelete(e: SyntheticEvent<HTMLButtonElement>, id: string) {
         setTarget(e.currentTarget.name);
-        DeleteActivity(id);
+        deleteExpense(id);
     }
 
     return (
@@ -52,7 +45,7 @@ const ExpenseList = () => {
                                         <Button
                                             name={expense.id}
                                             loading={submitting && target === expense.id}
-                                            onClick={(e: any) => handleActivityDelete(e, expense.id)}
+                                            onClick={(e: any) => handleExpenseDelete(e, expense.id)}
                                             floated='right'
                                             size='mini'
                                             icon >

@@ -18,14 +18,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [selectedExpense, setSelectedExpense] = useState<Expense | undefined>(undefined);
-  const [submitting, setSubmitiing] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [editMode, setEditMode] = useState(false);
   
-  useEffect(() => {
-    agent.Expenses.totalExpense().then(response => {
-      setTotalExpenses(response);
-      setLoading(false);
-    })
-   
+  useEffect(() => {  
     agent.Expenses.list().then(response => {
       let expenses: Expense[] = [];
       response.forEach(expense => {
@@ -34,32 +30,55 @@ function App() {
       })
       setExpenses(expenses);
       setLoading(false);
-      
     })
+    agent.Expenses.totalExpense().then(response => {
+      setTotalExpenses(response);
+      setLoading(false);
+    })
+
   }, [])
 
-  // function handleSelectExpense(id: string) {
-  //   setSelectedExpense(expenses.find(x => x.id))
-  // }
+  function handleSelectExpense(id: string) {
+    setSelectedExpense(expenses.find(x => x.id))
+  }
 
-  // function handleCancelSelectExpense() {
-  //   setSelectedExpense(undefined);
-  // }
+  function handleCancelSelectExpense() {
+    setSelectedExpense(undefined);
+  }
+  function handleFormOpen(id?: string) {
+    id ? handleSelectExpense(id) : handleCancelSelectExpense();
+    setEditMode(true);
+  }
+
+  function handleFormClose() {
+    setEditMode(false);
+  }
+
+  function DeleteExpense(id: string) {
+    setSubmitting(true);
+    agent.Expenses.delete(id).then(() => {
+        setExpenses([...expenses.filter(x => x.id !== id)]);
+        setSubmitting(false);
+    })
+    window.location.reload();
+  }
 
   function handleCreateOrEditExpense(expense: Expense) {
-    setSubmitiing(true);
+    setSubmitting(true);
     if(expense.id) {
       agent.Expenses.update(expense).then(() => {
       setExpenses([...expenses.filter(a => a.id !== expense.id), expense])
       setSelectedExpense(expense);
-      setSubmitiing(false);
+      setEditMode(false);
+      setSubmitting(false);
       })
     } else {
       expense.id = uuid();
       agent.Expenses.create(expense).then(() => {
         setExpenses([...expenses, expense])
         setSelectedExpense(expense);
-        setSubmitiing(false);
+        setEditMode(false);
+        setSubmitting(false);
       })
     }
 
@@ -69,13 +88,15 @@ function App() {
 
   }
 
+
   if (loading) return <Loading content='Loading app' />
   const chartData = totalExpenses.map((type) => (<Donat key="Donat" food={type.food} utility={type.utility} school={type.school} transport={type.transport} hobby={type.hobby} />))
   return (
     <div>
       <Router>
         <NavBar 
-          selectedExpense={selectedExpense}
+          expense={selectedExpense}
+          editMode={editMode}
           createOrEdit={handleCreateOrEditExpense}
           submitting={submitting}
 
@@ -89,7 +110,8 @@ function App() {
         </div>
 
         {chartData}
-        <ExpenseList />
+        <ExpenseList expenses={expenses} deleteExpense={DeleteExpense} submitting={submitting} openForm={handleFormOpen}
+          closeForm={handleFormClose}/>
       </Router>
     </div>
   );

@@ -6,13 +6,15 @@ import Logo from './assets/Logo.png';
 
 
 interface Props {
-    selectedExpense: Expense | undefined;
+    expense: Expense | undefined;
+    // selectedExpense: Expense | undefined;
+    editMode: boolean;
     createOrEdit: (expense: Expense) => void;
     submitting: boolean;
 }
 
 
-export default function NavBar({ selectedExpense, createOrEdit, submitting}: Props) {
+export default function NavBar({ expense: selectedExpense, createOrEdit, submitting}: Props) {
 
   const initialState = selectedExpense ?? {
         id: '',
@@ -44,12 +46,12 @@ export default function NavBar({ selectedExpense, createOrEdit, submitting}: Pro
       </Link>
       <div className="sidebuttons">
         <Link className="links" to="/">
-          <Button color='teal' icon='home' content='Dashboard' size='small' />
+          <Button icon='home'  size='small' />
         </Link>
         <Link className="linkAdd" to="">
           <Popup
             trigger={
-              <Button color='blue' icon='add' content='Add Expense' size='small' />
+              <Button  icon='add'  size='small' />
             }
             content={
               <Segment clearing>
