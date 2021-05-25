@@ -113,6 +113,17 @@ namespace Persistence
     }   
             };
 
+            if (context.TotalIncomes.Any()) return;
+
+            var totalIncomes = new List<Income>
+            {
+                new Income
+                {
+                    IncomeType = "Freelance",
+                    Amount = 1230,
+                }
+            };
+
 await context.Expenses.AddRangeAsync(expenses);
 await context.TotalExpenses.AddRangeAsync(totalExpenses);
 await context.SaveChangesAsync();
