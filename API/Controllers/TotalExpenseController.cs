@@ -9,7 +9,7 @@ namespace API.Controllers
     public class TotalExpenseController : BaseApiController
     {
         [HttpGet]
-         public async Task<ActionResult<List<TotalExpense>>> GetTotalExpenses()
+         public async Task<ActionResult<Dictionary<string, double>[]>> GetTotalExpenses()
          {
             return await Mediator.Send(new TotalAmount.Query());
 
