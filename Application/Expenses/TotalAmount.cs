@@ -34,22 +34,28 @@ namespace Application.Expenses
                 double totalUtility = _context.Expenses.Where(expense => expense.ExpenseType == "utility")
                 .Select(expense => expense.Amount)
                 .Sum();
+                totalUtility = Math.Floor(totalUtility * 100) / 100;
 
                 double totalSchool = _context.Expenses.Where(expense => expense.ExpenseType == "school")
                 .Select(expense => expense.Amount)
                 .Sum();
+                totalSchool = Math.Floor(totalSchool * 100) / 100;
 
                 double totalHobby = _context.Expenses.Where(expense => expense.ExpenseType == "hobby")
                 .Select(expense => expense.Amount)
                 .Sum();
+                totalHobby = Math.Floor(totalHobby * 100) / 100;
 
                  double totalTransport = _context.Expenses.Where(expense => expense.ExpenseType == "transport")
                 .Select(expense => expense.Amount)
                 .Sum();
+                totalTransport = Math.Floor(totalTransport * 100) / 100;
 
                 double totalFood = _context.Expenses.Where(expense => expense.ExpenseType == "food")
                 .Select(expense => expense.Amount)
                 .Sum();
+                totalFood = Math.Floor(totalFood * 100) / 100;
+
 
                 double totalAll = (totalFood + totalHobby + totalSchool + totalTransport + totalUtility);
                 totalAll = Math.Floor(totalAll * 100) / 100;
