@@ -20,7 +20,7 @@ const TExpense = () => {
         <div>
             
             {totalIncome.map(totalincome => (
-                <div className='TotalIncomeDiv' key={totalincome.id}><h1> <img alt="money" src="/assets/money2.png" /> $ {console.log(totalIncome)}{totalincome.amount}</h1><h5>Total Income</h5></div>
+                <div className='TotalIncomeDiv' key={totalincome.id}><h1> <img alt="money" src="/assets/money2.png" /> ${totalincome.amount}</h1><h5>Total Income</h5></div>
             ))}
         </div>
         </Transition>
