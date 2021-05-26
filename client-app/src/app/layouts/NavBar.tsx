@@ -29,8 +29,6 @@ export default function NavBar({ expense: selectedExpense, createOrEdit, submitt
 
   function handleSubmit() {
     createOrEdit(expense);
-    window.location.reload();
-
   }
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {

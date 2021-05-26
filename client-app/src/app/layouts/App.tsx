@@ -71,6 +71,7 @@ function App() {
       setSelectedExpense(expense);
       setEditMode(false);
       setSubmitting(false);
+      window.location.reload();
       })
     } else {
       expense.id = uuid();
@@ -79,6 +80,7 @@ function App() {
         setSelectedExpense(expense);
         setEditMode(false);
         setSubmitting(false);
+        window.location.reload();
       })
     }
 
