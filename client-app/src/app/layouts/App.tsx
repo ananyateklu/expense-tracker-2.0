@@ -59,8 +59,9 @@ function App() {
     agent.Expenses.delete(id).then(() => {
         setExpenses([...expenses.filter(x => x.id !== id)]);
         setSubmitting(false);
+        window.location.reload();
     })
-    window.location.reload();
+    
   }
 
   function handleCreateOrEditExpense(expense: Expense) {
