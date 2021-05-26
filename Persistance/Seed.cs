@@ -120,7 +120,7 @@ namespace Persistence
                 new Income
                 {
                     IncomeType = "Freelance",
-                    Amount = 1230,
+                    Amount = 1230.89,
                 }
             };
 
