@@ -39,7 +39,7 @@ function App() {
   }, [])
 
   function handleSelectExpense(id: string) {
-    setSelectedExpense(expenses.find(x => x.id))
+    setSelectedExpense(expenses.find(x => x.id === id))
   }
 
   function handleCancelSelectExpense() {
