@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -51,7 +52,7 @@ namespace Application.Expenses
                 .Sum();
 
                 double totalAll = (totalFood + totalHobby + totalSchool + totalTransport + totalUtility);
-
+                totalAll = Math.Floor(totalAll * 100) / 100;
 
                
              
