@@ -6,13 +6,15 @@ import { Button, Icon, Transition } from 'semantic-ui-react';
 
 interface Props {
     expenses: Expense[];
+    selectExpense: (id: string) => void;
+    cancelSelectExpense: () => void;
     deleteExpense: (id: string) => void;
     submitting: boolean;
     openForm: (id: string) => void;
     closeForm: () => void;
 }
 
-function ExpenseList({expenses, deleteExpense, submitting, openForm, closeForm }: Props) {
+function ExpenseList({expenses, deleteExpense, submitting, openForm, closeForm, selectExpense, cancelSelectExpense }: Props) {
 
     const [target, setTarget] = useState('');
     const [visible, setvisible] = useState(false);
@@ -42,6 +44,7 @@ function ExpenseList({expenses, deleteExpense, submitting, openForm, closeForm }
                                 <div className="typeamount">
                                     <small className="type">$ {expense.amount}</small>
                                     <div className="Tbutton">
+                                        <Button onClick={() => selectExpense(expense.id)} size='mini' icon='arrow alternate circle down' color='blue'></Button>
                                         <Button
                                             name={expense.id}
                                             loading={submitting && target === expense.id}

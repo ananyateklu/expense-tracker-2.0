@@ -68,7 +68,7 @@ function App() {
     setSubmitting(true);
     if(expense.id) {
       agent.Expenses.update(expense).then(() => {
-      setExpenses([...expenses.filter(a => a.id !== expense.id), expense])
+      setExpenses([...expenses.filter(x => x.id !== expense.id), expense])
       setSelectedExpense(expense);
       setEditMode(false);
       setSubmitting(false);
@@ -87,6 +87,7 @@ function App() {
 
     expense.id ? setExpenses([...expenses.filter(x => x.id !== expense.id), expense])
       : setExpenses([...expenses, { ...expense, id: uuid()}]);
+      setEditMode(false);
       setSelectedExpense(expense);
 
   }
@@ -99,6 +100,8 @@ function App() {
       <Router>
         <NavBar 
           expense={selectedExpense}
+          selectExpense={handleSelectExpense}
+          cancelSelectExpense={handleCancelSelectExpense}
           editMode={editMode}
           createOrEdit={handleCreateOrEditExpense}
           submitting={submitting}
@@ -113,7 +116,9 @@ function App() {
         </div>
 
         {chartData}
-        <ExpenseList expenses={expenses} deleteExpense={DeleteExpense} submitting={submitting} openForm={handleFormOpen}
+        <ExpenseList expenses={expenses} deleteExpense={DeleteExpense} submitting={submitting} 
+          openForm={handleFormOpen} selectExpense={handleSelectExpense}
+          cancelSelectExpense={handleCancelSelectExpense}
           closeForm={handleFormClose}/>
       </Router>
     </div>

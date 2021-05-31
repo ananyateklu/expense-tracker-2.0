@@ -1,12 +1,15 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Form, Popup, Segment } from 'semantic-ui-react';
+import { Button, Form, FormInput, Popup, Segment } from 'semantic-ui-react';
 import { Expense } from '../models/expense';
 import Logo from './assets/Logo.png';
 
 
+
 interface Props {
     expense: Expense | undefined;
+    selectExpense: (id: string) => void;
+    cancelSelectExpense: () => void;
     // selectedExpense: Expense | undefined;
     editMode: boolean;
     createOrEdit: (expense: Expense) => void;
@@ -14,15 +17,14 @@ interface Props {
 }
 
 
-export default function NavBar({ expense: selectedExpense, createOrEdit, submitting}: Props) {
-
+export default function NavBar({ expense: selectedExpense, createOrEdit, submitting, selectExpense, cancelSelectExpense}: Props) {
   const initialState = selectedExpense ?? {
         id: '',
         name: '',
         expenseType: '',
         amount: 0,
         description: '',
-        date: '2020-04-08'
+        date: ''
   }
 
   const [expense, setExpense] = useState(initialState);
@@ -54,10 +56,11 @@ export default function NavBar({ expense: selectedExpense, createOrEdit, submitt
               
               <Segment clearing>
                 <Form  autoComplete='off' >
+                {console.log(selectedExpense)}
                   <Form.Input placeholder='Name' value={expense.name} name='name' onChange={handleInputChange}/>
-                  <Form.Input placeholder='Expense Type' value={expense.expenseType} name='expenseType' onChange={handleInputChange}/>
+                  <Form.Input type="" placeholder='Expense Type' value={expense.expenseType} name='expenseType' onChange={handleInputChange}/>
                   <Form.Input placeholder='Amount' value={expense.amount} name='amount' onChange={handleInputChange} />
-                  <Form.Input type='date' placeholder='Date' value={expense.date} name='date' onChange={handleInputChange} />
+                  <FormInput placeholder='Date' value={expense.date} name='date' onChange={handleInputChange} />
                   <Form.TextArea placeholder='Description' value={expense.description} name='description' onChange={handleInputChange} />
                   <Button onClick={handleSubmit} loading={submitting} floated='right' positive type='submit' content='Submit' />
                 </Form>
