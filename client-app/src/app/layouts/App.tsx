@@ -81,6 +81,7 @@ function App() {
         setSelectedExpense(expense);
         setEditMode(false);
         setSubmitting(false);
+        window.location.reload();
       })
     }
 
